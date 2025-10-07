@@ -1,0 +1,272 @@
+[
+  {
+    "image": "https://i.ibb.co.com/4n5hLxmh/spotify.png",
+    "title": "Spotify",
+    "companyName": "Spotify AB",
+    "id": 1,
+    "description": "Stream millions of songs, podcasts, and playlists. Discover new music and share it with friends.",
+    "size": 42,
+    "reviews": 12500000,
+    "ratingAvg": 4.6,
+    "downloads": 50,
+    "ratings": [
+      { "name": "1 star", "count": 300000 },
+      { "name": "2 star", "count": 150000 },
+      { "name": "3 star", "count": 600000 },
+      { "name": "4 star", "count": 2000000 },
+      { "name": "5 star", "count": 9500000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/R4y8fKY1/ig.jpg",
+    "title": "Instagram",
+    "companyName": "Meta Platforms Inc.",
+    "id": 2,
+    "description": "Capture and share your moments, connect with friends, and explore what’s trending worldwide.",
+    "size": 35,
+    "reviews": 24500000,
+    "ratingAvg": 4.5,
+    "downloads": 10,
+    "ratings": [
+      { "name": "1 star", "count": 1000000 },
+      { "name": "2 star", "count": 500000 },
+      { "name": "3 star", "count": 2000000 },
+      { "name": "4 star", "count": 6000000 },
+      { "name": "5 star", "count": 15000000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/dJPt6sKr/duolingo.png",
+    "title": "Duolingo",
+    "companyName": "Duolingo Inc.",
+    "id": 3,
+    "description": "Learn languages with fun lessons, quizzes, and practice sessions — free forever.",
+    "size": 28,
+    "reviews": 6500000,
+    "ratingAvg": 4.7,
+    "downloads": 30,
+    "ratings": [
+      { "name": "1 star", "count": 120000 },
+      { "name": "2 star", "count": 80000 },
+      { "name": "3 star", "count": 300000 },
+      { "name": "4 star", "count": 1300000 },
+      { "name": "5 star", "count": 4700000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/rRKhktrD/netflix.png",
+    "title": "Netflix",
+    "companyName": "Netflix Inc.",
+    "id": 4,
+    "description": "Stream TV shows and movies anywhere. Watch your favorite series on the go.",
+    "size": 55,
+    "reviews": 9000000,
+    "ratingAvg": 4.4,
+    "downloads": 100,
+    "ratings": [
+      { "name": "1 star", "count": 500000 },
+      { "name": "2 star", "count": 300000 },
+      { "name": "3 star", "count": 1000000 },
+      { "name": "4 star", "count": 2800000 },
+      { "name": "5 star", "count": 4400000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/TxMPM5Cy/zoom.png",
+    "title": "Zoom",
+    "companyName": "Zoom Video Communications",
+    "id": 5,
+    "description": "Video conferencing made simple — meetings, chat, and collaboration in one app.",
+    "size": 40,
+    "reviews": 5200000,
+    "ratingAvg": 4.3,
+    "downloads": 50,
+    "ratings": [
+      { "name": "1 star", "count": 250000 },
+      { "name": "2 star", "count": 180000 },
+      { "name": "3 star", "count": 700000 },
+      { "name": "4 star", "count": 1600000 },
+      { "name": "5 star", "count": 2500000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/vCLRT4W1/notion.png",
+    "title": "Notion",
+    "companyName": "Notion Labs Inc.",
+    "id": 6,
+    "description": "All-in-one workspace for notes, tasks, wikis, and databases. Stay organized easily.",
+    "size": 31,
+    "reviews": 2100000,
+    "ratingAvg": 4.8,
+    "downloads": 20,
+    "ratings": [
+      { "name": "1 star", "count": 20000 },
+      { "name": "2 star", "count": 15000 },
+      { "name": "3 star", "count": 100000 },
+      { "name": "4 star", "count": 400000 },
+      { "name": "5 star", "count": 1565000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/FLR16DLp/tiktok.png",
+    "title": "TikTok",
+    "companyName": "ByteDance Ltd.",
+    "id": 7,
+    "description": "Short videos, big creativity. Watch and create trending content instantly.",
+    "size": 48,
+    "reviews": 32000000,
+    "ratingAvg": 4.6,
+    "downloads": 100,
+    "ratings": [
+      { "name": "1 star", "count": 1500000 },
+      { "name": "2 star", "count": 900000 },
+      { "name": "3 star", "count": 2000000 },
+      { "name": "4 star", "count": 6000000 },
+      { "name": "5 star", "count": 21600000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/tpqP6RJW/telegram.jpg",
+    "title": "Telegram",
+    "companyName": "Telegram FZ-LLC",
+    "id": 8,
+    "description": "Fast, secure messaging app with privacy and speed in mind.",
+    "size": 33,
+    "reviews": 9700000,
+    "ratingAvg": 4.7,
+    "downloads": 80,
+    "ratings": [
+      { "name": "1 star", "count": 200000 },
+      { "name": "2 star", "count": 100000 },
+      { "name": "3 star", "count": 500000 },
+      { "name": "4 star", "count": 2000000 },
+      { "name": "5 star", "count": 6900000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/5WHQxpfH/snapchat.png",
+    "title": "Snapchat",
+    "companyName": "Snap Inc.",
+    "id": 9,
+    "description": "Stay in touch with friends through photos, chats, and stories that disappear.",
+    "size": 37,
+    "reviews": 11200000,
+    "ratingAvg": 4.2,
+    "downloads": 100,
+    "ratings": [
+      { "name": "1 star", "count": 700000 },
+      { "name": "2 star", "count": 400000 },
+      { "name": "3 star", "count": 1500000 },
+      { "name": "4 star", "count": 3500000 },
+      { "name": "5 star", "count": 5100000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/HpTHpB8d/canva.jpg",
+    "title": "Canva",
+    "companyName": "Canva Pty Ltd",
+    "id": 10,
+    "description": "Create stunning designs with ease. Templates for social media, posters, and more.",
+    "size": 45,
+    "reviews": 8700000,
+    "ratingAvg": 4.8,
+    "downloads": 60,
+    "ratings": [
+      { "name": "1 star", "count": 120000 },
+      { "name": "2 star", "count": 60000 },
+      { "name": "3 star", "count": 300000 },
+      { "name": "4 star", "count": 1400000 },
+      { "name": "5 star", "count": 6820000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/NMknfPZ/whatsapp.png",
+    "title": "WhatsApp",
+    "companyName": "Meta Platforms Inc.",
+    "id": 11,
+    "description": "Free messaging and calling for everyone. Secure, simple, and reliable.",
+    "size": 29,
+    "reviews": 32000000,
+    "ratingAvg": 4.5,
+    "downloads": 100,
+    "ratings": [
+      { "name": "1 star", "count": 800000 },
+      { "name": "2 star", "count": 400000 },
+      { "name": "3 star", "count": 1800000 },
+      { "name": "4 star", "count": 7000000 },
+      { "name": "5 star", "count": 21800000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/Q7wKhrh6/github.png",
+    "title": "GitHub",
+    "companyName": "GitHub Inc.",
+    "id": 12,
+    "description": "Collaborate on code, manage projects, and host repositories all in one place.",
+    "size": 26,
+    "reviews": 900000,
+    "ratingAvg": 4.9,
+    "downloads": 35,
+    "ratings": [
+      { "name": "1 star", "count": 5000 },
+      { "name": "2 star", "count": 7000 },
+      { "name": "3 star", "count": 30000 },
+      { "name": "4 star", "count": 200000 },
+      { "name": "5 star", "count": 658000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/7JCf6bgF/udemy.png",
+    "title": "Udemy",
+    "companyName": "Udemy Inc.",
+    "id": 13,
+    "description": "Learn anything, anytime. Explore thousands of online courses taught by experts.",
+    "size": 52,
+    "reviews": 3700000,
+    "ratingAvg": 4.7,
+    "downloads": 100,
+    "ratings": [
+      { "name": "1 star", "count": 90000 },
+      { "name": "2 star", "count": 50000 },
+      { "name": "3 star", "count": 300000 },
+      { "name": "4 star", "count": 900000 },
+      { "name": "5 star", "count": 2360000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/9HvRsGyn/discord.png",
+    "title": "Discord",
+    "companyName": "Discord Inc.",
+    "id": 14,
+    "description": "Your place to talk. Communities, friends, and fandoms — all in one chat platform.",
+    "size": 50,
+    "reviews": 56,
+    "ratingAvg": 4.7,
+    "downloads": 50,
+    "ratings": [
+      { "name": "1 star", "count": 130000 },
+      { "name": "2 star", "count": 90000 },
+      { "name": "3 star", "count": 400000 },
+      { "name": "4 star", "count": 1500000 },
+      { "name": "5 star", "count": 3580000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/VYGVfWKN/download.png",
+    "title": "Google Maps",
+    "companyName": "Google LLC",
+    "id": 15,
+    "description": "Explore the world with accurate maps, live traffic updates, and navigation tools.",
+    "size": 38,
+    "reviews": 14500000,
+    "ratingAvg": 4.6,
+    "downloads": 100,
+    "ratings": [
+      { "name": "1 star", "count": 500000 },
+      { "name": "2 star", "count": 300000 },
+      { "name": "3 star", "count": 1000000 },
+      { "name": "4 star", "count": 4000000 },
+      { "name": "5 star", "count": 8700000 }
+    ]
+  }
+]
