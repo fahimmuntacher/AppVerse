@@ -4,8 +4,6 @@ import useApps from '../../Hooks/useApps';
 import TrendingApp from '../../Components/TrendingApp/TrendingApp';
 
 const Home = () => {
-    const data = useApps();
-    console.log(data);
     return (
         <div>
             <Banner></Banner>

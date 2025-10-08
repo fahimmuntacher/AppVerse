@@ -17,7 +17,7 @@ const TrendingApp = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10 px-4">
                 {
                     trendingApps.map(app => 
-                    <Link to= {`/apps/app-details/${app.id}`}>
+                    <Link to= {`/app-details/${app.id}`}>
                         <div className="card bg-white shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden flex flex-col">
                     <figure className="px-6 pt-6">
                         <img
