@@ -1,8 +1,7 @@
 import { Download, MoveRight, StarHalf } from "lucide-react";
 import useApps from "../../Hooks/useApps";
-import download from "../../assets/icon-downloads.png"
 import { Link } from "react-router";
-import Loading from "../Loading/Loading";
+import halfStar from "../../assets/halfstar.png"
 
 const TrendingApp = () => {
     const {apps, loading, error} = useApps();
@@ -40,7 +39,7 @@ const TrendingApp = () => {
                         <p className="font-medium text-lg">{app.downloads}M</p>
                         </div>
                         <div className="flex items-center gap-2">
-                        <StarHalf className="p-1 rounded-full" size={26} />
+                        <img src={halfStar} className="w-5" alt="" />
                         <p className="font-medium text-lg">{app.ratingAvg}</p>
                         </div>
                     </div>
