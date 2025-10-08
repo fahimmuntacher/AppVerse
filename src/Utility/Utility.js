@@ -19,4 +19,10 @@ const setInstallApp = (key, id) => {
     }
 }
 
-export {getInstallApp, setInstallApp};
+const unInstallApp = (key, id) => {
+  const storedInstallApp = getInstallApp(key);
+  const updatedAppList = storedInstallApp.filter(appId => parseInt(appId) !== id);
+  localStorage.setItem(key, JSON.stringify(updatedAppList));
+};
+
+export {getInstallApp, setInstallApp, unInstallApp};

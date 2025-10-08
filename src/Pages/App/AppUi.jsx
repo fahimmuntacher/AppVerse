@@ -6,8 +6,9 @@ import halfstar from "../../assets/halfstar.png"
 import { useState } from 'react';
 
 const AppUi = () => {
-    const {apps, loading, error} = useApps();
-    const [search, setSearch] = useState("")
+    const {apps} = useApps();
+    const [search, setSearch] = useState("");
+    
     const handleTerm = search.trim().toLocaleLowerCase();
 
     const searchedApp = handleTerm ? apps.filter(app => app.title.toLocaleLowerCase().includes(handleTerm)) : apps;

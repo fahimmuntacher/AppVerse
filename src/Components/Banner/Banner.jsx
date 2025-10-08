@@ -18,12 +18,16 @@ const Banner = () => {
                 </p>
                 <div className='flex justify-center gap-5'>
                 <button className="btn border-1 py-6 border-gray-400 shadow-sm rounded-xl ">
+                    <a className='flex items-center gap-2' href="https://www.apple.com/app-store/" target='_blank'>
                     <img src={AppleStore} alt="" />
                     <h1 className='text-lg font-semibold'>App Store</h1>
+                    </a>
                 </button>
                 <button className="btn border-1 py-6 border-gray-400 shadow-sm rounded-xl ">
-                    <img src={PlayStore} alt="" />
-                    <h1 className='text-lg font-semibold'>Google Play</h1>
+                    <a className='flex items-center gap-2' href="https://play.google.com/store/games?hl=en" target='_blank'>
+                        <img src={PlayStore} alt="" />
+                        <h1 className='text-lg font-semibold'>Google Play</h1>
+                    </a>
                 </button>
                 </div>
                 </div>
