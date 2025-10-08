@@ -30,7 +30,7 @@ const Hero = () => {
                     />
                 </div>
 
-                <div className='w-full h-full bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-center py-16 px-4'>
+                <div className='w-full h-full bg-gradient-to-br from-[#632EE3] to-[#9F62F2] text-center py-16 px-4'>
                    <div className='mx-w-[1440px] mx-auto flex flex-col items-center justify-center'>
                      <div>
                         <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-10'>Trusted by Millions, Built for You</h1>

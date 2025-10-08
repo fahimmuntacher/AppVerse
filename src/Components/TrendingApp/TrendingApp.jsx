@@ -1,4 +1,4 @@
-import { Download, StarHalf } from "lucide-react";
+import { Download, MoveRight, StarHalf } from "lucide-react";
 import useApps from "../../Hooks/useApps";
 import download from "../../assets/icon-downloads.png"
 import { Link } from "react-router";
@@ -18,7 +18,7 @@ const TrendingApp = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10 px-4">
                 {
                     trendingApps.map(app => 
-                    <Link to= {`/app-details/${app.id}`}>
+                    <Link to= {`/apps/app-details/${app.id}`}>
                         <div className="card bg-white shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden flex flex-col">
                     <figure className="px-6 pt-6">
                         <img
@@ -54,7 +54,7 @@ const TrendingApp = () => {
 
             <div className="flex justify-center">
                 <Link to="/apps">
-                    <button className="btn border-0 bg-gradient-to-br from-[#632EE3] to-[#9F62F2] text-white text-lg px-8 py-7 rounded-xl hover:bg-gradient-to-br hover:from-[#9F62F2] hover:to-[#632EE3]">Show All</button>
+                    <button className="btn border-0 bg-gradient-to-br from-[#632EE3] to-[#9F62F2] text-white text-lg px-8 py-7 rounded-xl hover:bg-gradient-to-br hover:from-[#9F62F2] hover:to-[#632EE3]">Show All <MoveRight></MoveRight></button>
                 </Link>
             </div>
         </div>
