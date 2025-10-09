@@ -24,7 +24,7 @@ const Installation = () => {
     unInstallApp("installApp", id);
     const updatedList = install.filter(app => app.id !== id);
     setInstall(updatedList);
-    toast.success("App uninstall succesfully!")
+    toast.warning("App uninstall succesfully!")
   };
 
   if (loading) {

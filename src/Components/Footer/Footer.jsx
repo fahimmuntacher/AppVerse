@@ -1,54 +1,147 @@
-import React from 'react';
-import brandLogo from "../../assets/logo (1).png"
-import { Link } from 'react-router';
+import React, { useEffect, useState } from 'react';
+import { Mail, Twitter, Instagram, Github, Linkedin, ArrowUp, ArrowDown } from 'lucide-react';
+import { toast } from 'react-toastify';
+import logo from "../../assets/logo (1).png"
 
-const Footer = () => {
-    return (
-        <div className=' bg-gradient-to-r from-slate-900 via-blue-900 to-violet-800 text-white'>
-            <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4 max-w-[1440px] mx-auto">
-                <aside className="grid-flow-col items-center">
-                      <img className='w-12' src={brandLogo} alt="" />
-                    <p>Copyright © {new Date().getFullYear()} - All right reserved by <Link to="/home">
-                    <span className='font-bold cursor-pointer hover:text-blue-200'>AppVerse</span></Link></p>
-                  </aside>
-                  <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end mx-auto">
-                    <a>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        className="fill-current">
-                        <path
-                          d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                      </svg>
-                    </a>
-                    <a>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        className="fill-current">
-                        <path
-                          d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-                      </svg>
-                    </a>
-                    <a>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        className="fill-current">
-                        <path
-                          d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-                      </svg>
-                    </a>
-                  </nav>
-            </footer>
+export default function AppVerseFooter() {
+  const [top, setTop] = useState(false)
+  useEffect(() => {
+    const handleScroll = () => {
+      setTop(window.scrollY === 0);
+    };
+     window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  const scrollToBottom = () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  };
+
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    const email = e.target.elements.email.value.trim();
+    if (!email) {
+      toast.warn('Please enter a valid email!');
+      return;
+    }
+
+    toast.success(`Thanks! ${email} has been added to AppVerse updates ✨`);
+    e.target.reset();
+  };
+
+
+  return (
+    <footer className="bg-gradient-to-r from-[#0f0f20] via-[#1c1c35] to-[#0f0f20] text-gray-100 pt-12 pb-6">
+      <div className="max-w-[1440px] mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          {/* BRAND + BLURB */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl font-bold text-white shadow-sm">
+                <img src={logo} alt="" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold">AppVerse</h3>
+                <p className="text-sm text-gray-300">Discover, explore & rate the best apps from across the digital universe.</p>
+              </div>
+            </div>
+
+            <p className="text-sm text-gray-400">
+              Built for app lovers find trending apps, share reviews, and explore what’s next in the world of mobile innovation.
+            </p>
+
+            <div className="flex items-center gap-3 mt-2">
+              <a aria-label="Twitter" href="#" className="p-2 rounded-md bg-white/5 hover:bg-white/10 transition">
+                <Twitter size={18} />
+              </a>
+              <a aria-label="Instagram" href="#" className="p-2 rounded-md bg-white/5 hover:bg-white/10 transition">
+                <Instagram size={18} />
+              </a>
+              <a aria-label="GitHub" href="#" className="p-2 rounded-md bg-white/5 hover:bg-white/10 transition">
+                <Github size={18} />
+              </a>
+              <a aria-label="LinkedIn" href="#" className="p-2 rounded-md bg-white/5 hover:bg-white/10 transition">
+                <Linkedin size={18} />
+              </a>
+            </div>
+          </div>
+
+          {/* NAV LINKS */}
+          <div className="flex justify-between gap-10 md:justify-center md:col-span-1">
+            <div>
+              <h4 className="font-semibold mb-3">Explore</h4>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li><a href="#" className="hover:underline">Top Apps</a></li>
+                <li><a href="#" className="hover:underline">Categories</a></li>
+                <li><a href="#" className="hover:underline">New Releases</a></li>
+                <li><a href="#" className="hover:underline">Submit App</a></li>
+              </ul>
+            </div>
+
+            <div className='flex flex-col items-center'>
+              <h4 className="font-semibold mb-3">Company</h4>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li><a href="#" className="hover:underline">About AppVerse</a></li>
+                <li><a href="#" className="hover:underline">Careers</a></li>
+                <li><a href="#" className="hover:underline">Blog</a></li>
+                <li><a href="#" className="hover:underline">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* NEWSLETTER */}
+          <div className="flex flex-col">
+            <h4 className="font-semibold mb-3">Join Our Newsletter</h4>
+            <p className="text-sm text-gray-300 mb-4">Get updates on trending apps, UI tips & exclusive developer stories.</p>
+
+            <form onSubmit={handleSubscribe} className="flex gap-2 w-full">
+              <label htmlFor="email" className="sr-only">Email address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="you@example.com"
+                className="flex-1 px-4 py-3 rounded-lg bg-white/5 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+              <button
+                type="submit"
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-br from-[#6d28d9] to-[#9f62f2] hover:opacity-95 font-semibold"
+              >
+                <Mail size={16} />
+                Subscribe
+              </button>
+            </form>
+
+            <div className="mt-6 text-sm text-gray-400">
+              <p>Privacy-first. Unsubscribe anytime.</p>
+            </div>
+          </div>
         </div>
-    );
-};
 
-export default Footer;
+        <div className="border-t border-white/10 mt-8 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-gray-400">© {new Date().getFullYear()} AppVerse. All rights reserved.</p>
+
+          <div className="flex items-center gap-4">
+            <a href="#" className="text-sm text-gray-300 hover:underline">Terms</a>
+            <a href="#" className="text-sm text-gray-300 hover:underline">Privacy</a>
+            <a href="#" className="text-sm text-gray-300 hover:underline">Support</a>
+          </div>
+        </div>
+
+        {/* Floating back-to-top button */}
+        <button
+      onClick={ top ? scrollToBottom : scrollToTop}
+      aria-label={ top ? "Scroll Down" : "Scroll Up"}
+      className="fixed right-6 bottom-6 bg-gradient-to-br from-[#9f62f2] to-[#632ee3] p-3 rounded-full shadow-lg hover:scale-105 transform transition md:flex items-center justify-center"
+    >
+      { top ? <ArrowDown size={18} /> : <ArrowUp size={18} />}
+    </button>
+      </div>
+    </footer>
+  );
+}
