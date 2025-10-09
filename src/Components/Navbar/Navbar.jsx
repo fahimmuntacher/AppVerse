@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white/70 backdrop-blur-lg shadow-sm">
-      <div className="max-w-[1440px] mx-auto flex justify-between items-center px-6 py-6">
+      <div className="max-w-[1440px] mx-auto flex justify-between items-center px-6 py-4">
         {/* Brand Logo */}
         <Link to="/home" className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600">
           <div className="flex items-center gap-2">

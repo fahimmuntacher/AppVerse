@@ -22,11 +22,6 @@ const Home = () => {
         return <Loading />;
     }
 
-    if(loading){
-        return <Loading></Loading>
-    }
-
-
     return (
         <div>
            <Banner></Banner>

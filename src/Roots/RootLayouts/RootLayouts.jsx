@@ -29,17 +29,6 @@ const RootLayouts = () => {
     return () => clearTimeout(timer);
   }, [location]);
 
-
-
-//    useEffect(() => {
-//     if (!loading) {
-//       const delay = setTimeout(() => setShowLoading(false), 800);
-//       return () => clearTimeout(delay);
-//     } else {
-//       setShowLoading(true);
-//     }
-//   }, [loading]);
-    
     return (
        <div className='flex flex-col min-h-screen'>
             <Navbar />

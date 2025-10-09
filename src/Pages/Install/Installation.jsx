@@ -12,6 +12,7 @@ const Installation = () => {
   const { apps, loading } = useApps();
   const { install, setInstall, showLoading, setShowLoading } = useContext(installContext);
   const [sort, setSort] = useState("");
+
   useEffect(() => {
     const storedInstallApp = getInstallApp("installApp");
     if (!storedInstallApp) return;
@@ -53,11 +54,6 @@ const handleSort = (type) => {
     if (loading || showLoading) {
         return <Loading />;
     }
-
-    if(loading){
-        return <Loading></Loading>
-    }
-
 
 
   return (

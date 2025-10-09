@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
             {
                 path: "/app-details/:id",
                 element: <AppDetails></AppDetails>,
-                errorElement: <AppDetailsErr></AppDetailsErr>
+                errorElement: <AppDetailsErr></AppDetailsErr>,
             },
             {
                 path: "/installation",

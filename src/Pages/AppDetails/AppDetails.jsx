@@ -14,14 +14,19 @@ import { installContext } from '../../Roots/RootLayouts/RootLayouts';
 
 const AppDetails = () => {
   const { id } = useParams();
-  const idNum = parseInt(id);
   const { apps, loading } = useApps();
-  const appDetail = apps.find(app => app.id === idNum) || {};
-
-  const { image, title, companyName, description, size, reviews, ratingAvg, downloads, ratings } = appDetail;
   const navigate = useNavigate();
   const [downloaded, setDownloaded] = useState(false);
   const { showLoading, setShowLoading } = useContext(installContext);
+  
+  if (!/^\d+$/.test(id)) {
+    return <AppDetailsErr />;
+  }
+
+  const idNum = parseInt(id);
+  const appDetail = apps.find(app => app.id === idNum);
+  const { image, title, companyName, description, size, reviews, ratingAvg, downloads, ratings } = appDetail || {};
+
   useEffect(() => {
     const installed = getInstallApp("installApp");
     if (installed.includes(id)) {
@@ -29,34 +34,29 @@ const AppDetails = () => {
     }
   }, [id]);
 
-
   const handleInstallList = () => {
-    setInstallApp("installApp", id);  
+    setInstallApp("installApp", id);
     setDownloaded(true);
-     toast.success("App installed successfully! 🚀");
+    toast.success("App installed successfully! 🚀");
   };
 
   useEffect(() => {
-        if (!loading) {
-            const delay = setTimeout(() => {
-                setShowLoading(false);
-            }, 200);
-            return () => clearTimeout(delay);
-        }
-    }, [setShowLoading, loading]);
-
-    if (loading || showLoading) {
-        return <Loading />;
+    if (!loading) {
+      const delay = setTimeout(() => setShowLoading(false), 200);
+      return () => clearTimeout(delay);
     }
+  }, [setShowLoading, loading]);
 
-    if(loading){
-        return <Loading></Loading>
-    }
-
-  if(!appDetail){
-    return<AppDetailsErr></AppDetailsErr>
+  // Handle loading and invalid data
+  if (loading || showLoading) {
+    return <Loading />;
   }
 
+  if (!appDetail) {
+    return <AppDetailsErr />;
+  }
+
+  // card UI
   return (
     <div className='max-w-[1440px] mx-auto py-15'>
       <div className='flex items-center flex-col sm:flex-row space-y-5 sm:space-x-5 h-fit border-b-1 pb-8 border-gray-400'>
@@ -65,7 +65,6 @@ const AppDetails = () => {
         </div>
 
         <div className='w-full text-center sm:text-start'>
-          {/* app name */}
           <div className='border-b-1 pb-5 border-gray-400 space-y-2'>
             <h2 className='text-3xl font-bold'>{title}</h2>
             <h3 className='text-xl text-gray-500'>
@@ -73,7 +72,6 @@ const AppDetails = () => {
             </h3>
           </div>
 
-          {/* Stats */}
           <div>
             <div className="stats flex flex-col sm:flex-row sm:justify-between mx-auto sm:mx-0 gap-4 sm:gap-0 w-6/12">
               <div className="stat">
@@ -101,8 +99,6 @@ const AppDetails = () => {
               </div>
             </div>
 
-            {/* conditional button */}
-
             <div className='flex flex-wrap justify-center sm:justify-start items-center gap-5'>
               {downloaded ? (
                 <button
@@ -121,10 +117,10 @@ const AppDetails = () => {
                 </button>
               )}
 
-              {/* go back button */}
               <button
                 onClick={() => navigate(-1)}
-                className='btn border-0 bg-[#632EE3] text-white text-xl font-semibold px-8 py-7 rounded-xl hover:bg-[#9F62F2] flex items-center gap-2'> Go Back <ArrowLeftToLine />
+                className='btn border-0 bg-[#632EE3] text-white text-xl font-semibold px-8 py-7 rounded-xl hover:bg-[#9F62F2] flex items-center gap-2'>
+                Go Back <ArrowLeftToLine />
               </button>
             </div>
           </div>

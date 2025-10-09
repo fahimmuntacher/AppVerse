@@ -130,8 +130,7 @@ export default function AppVerseFooter() {
         <button
           onClick={top ? scrollToBottom : scrollToTop}
           aria-label={top ? "Scroll Down" : "Scroll Up"}
-          className="fixed right-4 bottom-4 md:right-6 md:bottom-6 bg-gradient-to-br from-[#9f62f2] to-[#632ee3] p-3 rounded-full shadow-lg hover:scale-105 transform transition flex items-center justify-center"
-        >
+          className="fixed right-4 bottom-4 md:right-6 md:bottom-6 bg-gradient-to-br from-[#9f62f2] to-[#632ee3] p-3 rounded-full shadow-lg hover:scale-105 transform transition flex items-center justify-center">
           {top ? <ArrowDown size={18} /> : <ArrowUp size={18} />}
         </button>
       </div>

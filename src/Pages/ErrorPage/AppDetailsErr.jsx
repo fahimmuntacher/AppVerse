@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const AppDetailsErr = () => {
     return (
-            <div className='flex flex-col justify-center items-center text-center px-4 h-screen'>
+            <div className='flex flex-col justify-center items-center text-center px-4 py-25'>
                 <img 
                     src={appErro} 
                     alt="" 
