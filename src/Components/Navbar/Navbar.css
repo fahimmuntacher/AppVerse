@@ -10,6 +10,7 @@
 }
 
 .active {
-    color: #2563eb;                 
-    border-bottom: 3px solid #2563eb;
+  color: #2563eb;
+  border-bottom: 3px solid #2563eb ;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 }
