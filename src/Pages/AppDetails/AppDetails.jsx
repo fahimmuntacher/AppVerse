@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import useApps from '../../Hooks/useApps';
 import download from "../../assets/icon-downloads.png";
@@ -10,6 +10,7 @@ import { getInstallApp, setInstallApp } from '../../Utility/Utility';
 import Loading from '../../Components/Loading/Loading';
 import AppDetailsErr from '../ErrorPage/AppDetailsErr';
 import { toast } from 'react-toastify';
+import { installContext } from '../../Roots/RootLayouts/RootLayouts';
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -20,6 +21,7 @@ const AppDetails = () => {
   const { image, title, companyName, description, size, reviews, ratingAvg, downloads, ratings } = appDetail;
   const navigate = useNavigate();
   const [downloaded, setDownloaded] = useState(false);
+  const { showLoading, setShowLoading } = useContext(installContext);
   useEffect(() => {
     const installed = getInstallApp("installApp");
     if (installed.includes(id)) {
@@ -34,9 +36,22 @@ const AppDetails = () => {
      toast.success("App installed successfully! 🚀");
   };
 
-  if(loading){
-   return <Loading></Loading>
-  }
+  useEffect(() => {
+        if (!loading) {
+            const delay = setTimeout(() => {
+                setShowLoading(false);
+            }, 200);
+            return () => clearTimeout(delay);
+        }
+    }, [setShowLoading, loading]);
+
+    if (loading || showLoading) {
+        return <Loading />;
+    }
+
+    if(loading){
+        return <Loading></Loading>
+    }
 
   if(!appDetail){
     return<AppDetailsErr></AppDetailsErr>

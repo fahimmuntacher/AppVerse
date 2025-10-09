@@ -10,9 +10,8 @@ import { toast } from 'react-toastify';
 
 const Installation = () => {
   const { apps, loading } = useApps();
-  const { install, setInstall } = useContext(installContext);
+  const { install, setInstall, showLoading, setShowLoading } = useContext(installContext);
   const [sort, setSort] = useState("");
-
   useEffect(() => {
     const storedInstallApp = getInstallApp("installApp");
     if (!storedInstallApp) return;
@@ -42,9 +41,24 @@ const handleSort = (type) => {
     }
 } 
 
-  if (loading) {
-    return <Loading />;
-  }
+    useEffect(() => {
+        if (!loading) {
+            const delay = setTimeout(() => {
+                setShowLoading(false);
+            }, 800);
+            return () => clearTimeout(delay);
+        }
+    }, [setShowLoading, loading]);
+
+    if (loading || showLoading) {
+        return <Loading />;
+    }
+
+    if(loading){
+        return <Loading></Loading>
+    }
+
+
 
   return (
     <div className="py-20 max-w-[1440px] mx-auto">

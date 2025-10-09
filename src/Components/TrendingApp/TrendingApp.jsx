@@ -1,4 +1,4 @@
-import { Download, MoveRight, StarHalf } from "lucide-react";
+import { Download, MoveRight } from "lucide-react";
 import useApps from "../../Hooks/useApps";
 import { Link } from "react-router";
 import halfStar from "../../assets/halfstar.png"
