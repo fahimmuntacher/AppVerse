@@ -7,17 +7,19 @@ import review from '../../assets/icon-review.png';
 import { ArrowLeftToLine, Download, CheckCircle } from 'lucide-react';
 import AppRatingsGraph from './AppRatingsGraph';
 import { getInstallApp, setInstallApp } from '../../Utility/Utility';
+import Loading from '../../Components/Loading/Loading';
+import AppDetailsErr from '../ErrorPage/AppDetailsErr';
+import { toast } from 'react-toastify';
 
 const AppDetails = () => {
   const { id } = useParams();
   const idNum = parseInt(id);
-  const { apps } = useApps();
+  const { apps, loading } = useApps();
   const appDetail = apps.find(app => app.id === idNum) || {};
+
   const { image, title, companyName, description, size, reviews, ratingAvg, downloads, ratings } = appDetail;
   const navigate = useNavigate();
-  
   const [downloaded, setDownloaded] = useState(false);
-
   useEffect(() => {
     const installed = getInstallApp("installApp");
     if (installed.includes(id)) {
@@ -29,7 +31,16 @@ const AppDetails = () => {
   const handleInstallList = () => {
     setInstallApp("installApp", id);  
     setDownloaded(true);
+     toast.success("App installed successfully! 🚀");
   };
+
+  if(loading){
+   return <Loading></Loading>
+  }
+
+  if(!appDetail){
+    return<AppDetailsErr></AppDetailsErr>
+  }
 
   return (
     <div className='max-w-[1440px] mx-auto py-15'>

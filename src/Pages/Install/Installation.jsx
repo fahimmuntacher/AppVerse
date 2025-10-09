@@ -6,6 +6,7 @@ import { Download } from 'lucide-react';
 import halfStar from "../../assets/halfstar.png";
 import { Link } from 'react-router';
 import Loading from '../../Components/Loading/Loading';
+import { toast } from 'react-toastify';
 
 const Installation = () => {
   const { apps, loading } = useApps();
@@ -23,6 +24,7 @@ const Installation = () => {
     unInstallApp("installApp", id);
     const updatedList = install.filter(app => app.id !== id);
     setInstall(updatedList);
+    toast.success("App uninstall succesfully!")
   };
 
   if (loading) {
@@ -61,12 +63,12 @@ const Installation = () => {
                   <h1 className="text-xl font-bold">{app.title}</h1>
 
                   <div className="flex items-center gap-4 mt-3 text-gray-600">
-                    <h2 className="text-lg font-semibold text-blue-600 flex items-center gap-2">
+                    <h2 className="text-lg sm:flex hidden  font-semibold text-blue-600 items-center gap-2">
                       <Download size={18} />
                       {app.downloads}M
                     </h2>
 
-                    <h2 className="text-lg font-semibold text-[#FF8811] flex items-center gap-2">
+                    <h2 className="text-lg font-medium sm:font-semibold text-[#FF8811] flex items-center gap-2">
                       <img className="w-5" src={halfStar} alt="rating" />
                       {app.ratingAvg}
                     </h2>

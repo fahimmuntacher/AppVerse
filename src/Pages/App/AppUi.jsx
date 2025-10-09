@@ -4,15 +4,18 @@ import { Download, Search, SearchIcon, StarHalf } from 'lucide-react';
 import { Link } from 'react-router';
 import halfstar from "../../assets/halfstar.png"
 import { useState } from 'react';
+import Loading from '../../Components/Loading/Loading';
 
 const AppUi = () => {
-    const {apps} = useApps();
+    const {apps, loading} = useApps();
     const [search, setSearch] = useState("");
+    if(loading){
+        return <Loading></Loading>
+    }
     
     const handleTerm = search.trim().toLocaleLowerCase();
-
     const searchedApp = handleTerm ? apps.filter(app => app.title.toLocaleLowerCase().includes(handleTerm)) : apps;
-
+   
     return (
         <div className='py-20'>
             <div>
@@ -80,7 +83,7 @@ const AppUi = () => {
                 {
                    searchedApp.map(app => 
                     <Link to= {`/app-details/${app.id}`}>
-                        <div className="card bg-white shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden flex flex-col">
+                        <div className="card bg-white shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden flex flex-col transform transition duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-purple-300 border-1 border-gray-300">
                     <figure className="px-6 pt-6">
                         <img
                         src={app.image}

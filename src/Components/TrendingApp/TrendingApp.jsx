@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import halfStar from "../../assets/halfstar.png"
 
 const TrendingApp = () => {
-    const {apps, loading, error} = useApps();
+    const {apps} = useApps();
     const trendingApps = apps.slice(0,8)
     return (
         
@@ -18,7 +18,7 @@ const TrendingApp = () => {
                 {
                     trendingApps.map(app => 
                     <Link to= {`/app-details/${app.id}`}>
-                        <div className="card bg-white shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden flex flex-col">
+                        <div className="card bg-white shadow-lg hover:shadow-2xl rounded-2xl overflow-hidden flex flex-col transform transition duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-purple-300 border-1 border-gray-300">
                     <figure className="px-6 pt-6">
                         <img
                         src={app.image}

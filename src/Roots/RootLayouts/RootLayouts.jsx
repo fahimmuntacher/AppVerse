@@ -5,6 +5,7 @@ import Footer from '../../Components/Footer/Footer';
 import { createContext, useEffect, useState } from 'react';
 import { getInstallApp, setInstallApp } from '../../Utility/Utility';
 import useApps from '../../Hooks/useApps';
+import { ToastContainer } from 'react-toastify';
 
 export const installContext = createContext()
 const RootLayouts = () => {
@@ -12,11 +13,11 @@ const RootLayouts = () => {
     const {apps} = useApps()
 
     useEffect(() => {
-        const storeInstall = getInstallApp("installApp");
-        const idNum = storeInstall.map(id => parseInt(id));
-        const installAppList = apps.filter(app => idNum.includes(app.id));
-        setInstallApp(installAppList);
-    }, [apps])
+    const storeInstall = getInstallApp("installApp");
+    const idNum = storeInstall.map(id => parseInt(id));
+    const installAppList = apps.filter(app => idNum.includes(app.id));
+    setInstall(installAppList); 
+  }, [apps]);
     
     return (
        <div className='flex flex-col min-h-screen'>
@@ -27,6 +28,17 @@ const RootLayouts = () => {
                 </div>
             </installContext.Provider>
             <Footer />
+
+             <ToastContainer
+                position="top-right"
+                autoClose={2500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                pauseOnHover
+                theme="colored"
+                />
+
         </div>
     );
 };
